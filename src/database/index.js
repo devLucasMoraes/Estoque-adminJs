@@ -2,7 +2,11 @@ import Sequelize from "sequelize";
 import config from '../config/database.js'
 
 // import Model from ''
-const models = []
+import Users from '../models/users.js'
+
+
+const models = [Users]
+
 class Database {
     constructor() {
         this.connection = new Sequelize(config)
