@@ -25,7 +25,7 @@ module.exports = {
         allowNull: false
       },
       ativo: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.ENUM('ativo', 'desativado'), // campo de tipo STRING que so suporta valores fechados
       },
       createdAt: {
         allowNull: false,
