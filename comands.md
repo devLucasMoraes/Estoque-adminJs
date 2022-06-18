@@ -3,3 +3,6 @@ npm i sucrase nodemon -D
 
 npm i @adminjs/sequelize sequelize  mysql2 dotenv 
 npm i sequelize-cli -D
+
+--executar esse comando na pasta src--
+npx sequelize-cli init
