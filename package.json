@@ -1,0 +1,11 @@
+{
+  "name": "adminjs",
+  "version": "1.0.0",
+  "description": "controle de estoque web responsivo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "devLucasMoraes",
+  "license": "ISC"
+}
