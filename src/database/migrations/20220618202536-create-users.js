@@ -21,10 +21,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       role: {
-        type: Sequelize.ENUM('admin', 'operador'), // campo de tipo STRING que so suporta valores fechados
+        type: Sequelize.ENUM('administrador', 'operador'), // campo de tipo STRING que so suporta valores fechados
         allowNull: false
       },
-      ativo: {
+      status: {
         type: Sequelize.ENUM('ativo', 'desativado'), // campo de tipo STRING que so suporta valores fechados
       },
       createdAt: {
