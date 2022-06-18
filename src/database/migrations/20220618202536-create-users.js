@@ -12,10 +12,17 @@ module.exports = {
         type: Sequelize.STRING
       },
       email: {
+        allowNull: false,
+        unique: true,
         type: Sequelize.STRING
+
       },
       password_hash: {
         type: Sequelize.STRING
+      },
+      role: {
+        type: Sequelize.ENUM('admin', 'manager', 'developer'), // campo de tipo STRING que so suporta valores fechados
+        allowNull: false
       },
       ativo: {
         type: Sequelize.BOOLEAN
