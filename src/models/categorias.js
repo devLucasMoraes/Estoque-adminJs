@@ -7,10 +7,10 @@ class Categorias extends Model {
       nome: Sequelize.STRING,
       und_medida: Sequelize.STRING,
       estoque_min: Sequelize.DECIMAL,
-      user_id: Sequelize.INTEGER
+      //user_id: Sequelize.INTEGER
     }, {
       sequelize,
-      modelName: 'Categorias',
+      modelName: 'Categorias'
     })
   }
   static associate(models) {
