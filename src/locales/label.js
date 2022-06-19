@@ -1,5 +1,5 @@
 export default {
-    users: 'Usuários',
+    Users: 'Usuários',
     projects: 'Projetos',
     tasks: 'Tarefas'
 };
