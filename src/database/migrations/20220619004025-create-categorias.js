@@ -9,15 +9,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       nome: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       und_medida: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       estoque_min: {
+        allowNull: false,
         type: Sequelize.DECIMAL
       },
       user_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       createdAt: {
