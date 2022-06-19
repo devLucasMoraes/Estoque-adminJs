@@ -1,30 +1,28 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Categorias', {
+    await queryInterface.createTable('Materiais', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
-        allowNull: false,
+      descricao: {
         type: Sequelize.STRING
       },
-      und_medida: {
+      categorias_id: {
         allowNull: false,
-        type: Sequelize.STRING
-      },
-      estoque_min: {
-        allowNull: false,
-        type: Sequelize.DECIMAL
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: { model: 'Categorias', key: 'id'},
+        type: Sequelize.INTEGER
       },
       user_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
+        references: { model: 'Users', key: 'id'},
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -38,6 +36,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Categorias');
+    await queryInterface.dropTable('Materiais');
   }
 };

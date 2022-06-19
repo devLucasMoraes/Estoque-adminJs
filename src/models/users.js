@@ -19,7 +19,9 @@ class Users extends Model {
   }
   static associate(models) {
     this.hasMany(models.Categorias, {
-      //as: 'usernam',
+      foreignKey: 'user_id'
+    })
+    this.hasMany(models.Materiais, {
       foreignKey: 'user_id'
     })
   }
