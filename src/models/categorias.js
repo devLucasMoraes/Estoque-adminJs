@@ -1,26 +1,23 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Categorias extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+
+import Sequelize, { Model } from 'sequelize'
+class Categorias extends Model {
+  static init(sequelize) {
+    super.init({
+      nome: Sequelize.STRING,
+      und_medida: Sequelize.STRING,
+      estoque_min: Sequelize.DECIMAL,
+      user_id: Sequelize.INTEGER
+    }, {
+      sequelize,
+      modelName: 'Categorias',
+    })
   }
-  Categorias.init({
-    nome: DataTypes.STRING,
-    und_medida: DataTypes.STRING,
-    estoque_min: DataTypes.DECIMAL,
-    user_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Categorias',
-  });
-  return Categorias;
-};
+  static associate(models) {
+    this.belongsTo(models.Users, {
+      foreignKey: 'user_id'
+    })
+  }
+}
+
+export default Categorias;
