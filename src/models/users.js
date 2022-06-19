@@ -14,10 +14,13 @@ class Users extends Model {
       status: Sequelize.ENUM('ativo', 'desativado')
     }, {
       sequelize,
+      modelName: 'Users'
     })
   }
   static associate(models) {
-    // define association here
+    this.hasMany(models.Categorias, {
+      foreignKey: 'user_id'
+    })
   }
 }
 
