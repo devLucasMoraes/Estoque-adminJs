@@ -3,10 +3,11 @@ import config from '../config/database.js'
 
 // import Model from ''
 import Users from '../models/users.js'
-import Categorias from "../models/categorias.js";
+import Categorias from "../models/categorias.js"
+import Materiais from "../models/materiais.js"
 
 
-const models = [Users, Categorias]
+const models = [Users, Categorias, Materiais]
 
 class Database {
     constructor() {
