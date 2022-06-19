@@ -11,7 +11,7 @@ export default {
         },
         properties: {
           id: "ID",
-          username: "Nome",
+          name: "Nome",
           email: "Email",
           password: "Senha",
           passwordHash: "Senha criptografada",

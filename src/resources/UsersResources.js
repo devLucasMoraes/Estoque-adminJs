@@ -21,7 +21,7 @@ export default {
             id: {
                 position: 1,
             },
-            username: {
+            name: {
                 position: 2,
                 isRequired: true
             },

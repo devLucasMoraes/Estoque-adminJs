@@ -6,7 +6,7 @@ import Sequelize, { Model } from 'sequelize'
 class Users extends Model {
   static init(sequelize) {
     super.init({
-      username: Sequelize.STRING,
+      name: Sequelize.STRING,
       email: Sequelize.STRING,
       password: Sequelize.VIRTUAL,
       password_hash: Sequelize.STRING,
@@ -19,6 +19,7 @@ class Users extends Model {
   }
   static associate(models) {
     this.hasMany(models.Categorias, {
+      //as: 'usernam',
       foreignKey: 'user_id'
     })
   }
