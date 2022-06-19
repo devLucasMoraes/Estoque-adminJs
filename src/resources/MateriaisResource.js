@@ -2,7 +2,7 @@ import Materiais from '../models/materiais.js'
 
 export default {
     resource: Materiais,
-    Option: {
+    options: {
         parent: {
             icon: 'Barcode'
         },

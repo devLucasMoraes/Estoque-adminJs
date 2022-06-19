@@ -4,7 +4,7 @@ import Sequelize, { Model } from 'sequelize'
 class Categorias extends Model {
   static init(sequelize) {
     super.init({
-      nome: Sequelize.STRING,
+      name: Sequelize.STRING,
       und_medida: Sequelize.STRING,
       estoque_min: Sequelize.DECIMAL,
       //user_id: Sequelize.INTEGER
@@ -16,6 +16,9 @@ class Categorias extends Model {
   static associate(models) {
     this.belongsTo(models.Users, {
       foreignKey: 'user_id'
+    })
+    this.hasMany(models.Materiais, {
+      foreignKey: 'categorias_id',
     })
   }
 }
