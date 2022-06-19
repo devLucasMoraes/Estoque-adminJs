@@ -17,3 +17,5 @@ npx sequelize-cli model:generate --name Categorias --attributes nome:string,und_
 npx sequelize-cli db:migrate
 
 npx sequelize-cli model:generate --name Materiais --attributes descricao:string
+
+npx sequelize-cli db:migrate
