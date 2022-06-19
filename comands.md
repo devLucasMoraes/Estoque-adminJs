@@ -13,3 +13,5 @@ npx sequelize-cli model:generate --name Users --attributes username:string,email
 npx sequelize-cli db:migrate
 
 npx sequelize-cli model:generate --name Categorias --attributes nome:string,und_medida:string,estoque_min:decimal,user_id:integer
+
+npx sequelize-cli db:migrate
