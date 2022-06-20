@@ -27,6 +27,9 @@ class Users extends Model {
     this.hasMany(models.Fornecedores, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transportadoras, {
+      foreignKey: 'user_id'
+    })
   }
 }
 
