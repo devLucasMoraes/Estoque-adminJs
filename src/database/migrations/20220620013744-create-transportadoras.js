@@ -14,6 +14,13 @@ module.exports = {
       fone: {
         type: Sequelize.STRING
       },
+      user_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
