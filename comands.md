@@ -21,3 +21,7 @@ npx sequelize-cli model:generate --name Materiais --attributes descricao:string
 npx sequelize-cli db:migrate
 
 npx sequelize-cli model:generate --name Fornecedores --attributes name:string,fone:string
+
+
+
+npx sequelize-cli model:generate --name Fornecedores --attributes name:string,fone:string
