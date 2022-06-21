@@ -7,10 +7,11 @@ import Categorias from "../models/categorias.js"
 import Materiais from "../models/materiais.js"
 import Fornecedores from "../models/fornecedores.js"
 import Transportadoras from "../models/transportadoras.js"
-import Transacoes_entrada from "../models/transacoes_entrada.js";
+import Transacoes_entrada from "../models/transacoes_entrada.js"
+import Destino from "../models/destinos.js";
 
 
-const models = [Users, Categorias, Materiais, Fornecedores, Transportadoras, Transacoes_entrada]
+const models = [Users, Categorias, Materiais, Fornecedores, Transportadoras, Transacoes_entrada, Destino]
 
 class Database {
     constructor() {
