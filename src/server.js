@@ -11,6 +11,7 @@ import CategoriasResources from './resources/CategoriasResources'
 import MateriaisResource from './resources/MateriaisResource'
 import FornecedoresResources from './resources/FornecedoresResources'
 import TransportadorasResources from './resources/TransportadorasResources'
+import Transacoes_entradaResources from './resources/Transacoes_entradaResources'
 
 import locales from './locales/index.js'
 
@@ -21,7 +22,7 @@ const app = express()
 const adminjs = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UsersResource, CategoriasResources, MateriaisResource, FornecedoresResources, TransportadorasResources],
+    resources: [UsersResource, CategoriasResources, MateriaisResource, FornecedoresResources, TransportadorasResources, Transacoes_entradaResources],
     ...locales
 })
 

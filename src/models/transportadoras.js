@@ -15,6 +15,9 @@ class Transportadoras extends Model {
     this.belongsTo(models.Users, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transacoes_entrada, {
+      foreignKey: 'transportadora_id'
+    })
   }
 }
 

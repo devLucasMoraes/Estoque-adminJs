@@ -27,3 +27,5 @@ npx sequelize-cli model:generate --name Fornecedores --attributes name:string,fo
 npx sequelize-cli model:generate --name Fornecedores --attributes name:string,fone:string
 
 npx sequelize-cli db:migrate
+
+npx sequelize-cli model:generate --name Transacoes_entrada --attributes qtd:decimal,valor:decimal,valor_frete:decimal,nfe:string,obs:text
