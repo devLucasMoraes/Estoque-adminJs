@@ -36,6 +36,9 @@ class Users extends Model {
     this.hasMany(models.Destinos, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Requisitantes, {
+      foreignKey: 'user_id'
+    })
   }
 }
 
