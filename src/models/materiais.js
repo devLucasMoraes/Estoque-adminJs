@@ -18,6 +18,9 @@ class Materiais extends Model {
     this.belongsTo(models.Users, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transacoes_entrada, {
+      foreignKey: 'material_id'
+    })
   }
 }
 

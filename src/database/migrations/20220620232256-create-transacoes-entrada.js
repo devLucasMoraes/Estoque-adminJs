@@ -9,6 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       qtd: {
+        allowNull: false,
         type: Sequelize.DECIMAL
       },
       valor: {
@@ -22,6 +23,34 @@ module.exports = {
       },
       obs: {
         type: Sequelize.TEXT
+      },
+      user_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
+        type: Sequelize.INTEGER
+      },
+      transportadora_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Transportadoras', key: 'id'}, // referenciando chave estranjeira
+        type: Sequelize.INTEGER
+      },
+      fornecedora_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Fornecedores', key: 'id'}, // referenciando chave estranjeira
+        type: Sequelize.INTEGER
+      },
+      material_id: {
+        allowNull: false,
+        onUpdate: 'CASCADE',
+        onDelete: 'RESTRICT',
+        references: {model: 'Materiais', key: 'id'}, // referenciando chave estranjeira
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

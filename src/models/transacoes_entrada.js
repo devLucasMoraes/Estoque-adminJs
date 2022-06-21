@@ -1,27 +1,33 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Transacoes_entrada extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+import Sequelize, { Model } from 'sequelize'
+
+class Transacoes_entrada extends Model {
+  static init(sequelize){
+    super.init({
+      qtd: Sequelize.DECIMAL,
+      valor: Sequelize.DECIMAL,
+      valor_frete: Sequelize.DECIMAL,
+      nfe: Sequelize.STRING,
+      obs: Sequelize.TEXT
+    }, {
+      sequelize,
+      modelName: 'Transacoes_entrada',
+    })
   }
-  Transacoes_entrada.init({
-    qtd: DataTypes.DECIMAL,
-    valor: DataTypes.DECIMAL,
-    valor_frete: DataTypes.DECIMAL,
-    nfe: DataTypes.STRING,
-    obs: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Transacoes_entrada',
-  });
-  return Transacoes_entrada;
-};
+  static associate(models) {
+    this.belongsTo(models.Users, {
+      foreignKey: 'user_id'
+    })
+    this.belongsTo(models.Transportadoras, {
+      foreignKey: 'transportadora_id'
+    })
+    this.belongsTo(models.Fornecedores, {
+      foreignKey: 'fornecedora_id'
+    })
+    this.belongsTo(models.Materiais, {
+      foreignKey: 'material_id'
+    })
+  }
+}
+
+export default Transacoes_entrada
