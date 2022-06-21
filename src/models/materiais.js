@@ -5,7 +5,7 @@ import Sequelize, { Model } from 'sequelize'
 class Materiais extends Model {
   static init(sequelize) {
     super.init({
-      descricao: Sequelize.STRING
+      name: Sequelize.STRING
     }, {
       sequelize,
       modelName: 'Materiais',

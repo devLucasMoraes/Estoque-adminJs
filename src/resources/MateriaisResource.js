@@ -10,7 +10,7 @@ export default {
             id: {
                 position: 1
               },
-              descricao: {
+              name: {
                 position: 2,
                 isRequired: true
               },
