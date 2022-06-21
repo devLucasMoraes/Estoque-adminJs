@@ -9,9 +9,10 @@ import Fornecedores from "../models/fornecedores.js"
 import Transportadoras from "../models/transportadoras.js"
 import Transacoes_entrada from "../models/transacoes_entrada.js"
 import Destino from "../models/destinos.js";
+import Requisitantes from "../models/requisitantes.js"
 
 
-const models = [Users, Categorias, Materiais, Fornecedores, Transportadoras, Transacoes_entrada, Destino]
+const models = [Users, Categorias, Materiais, Fornecedores, Transportadoras, Transacoes_entrada, Destino, Requisitantes]
 
 class Database {
     constructor() {
