@@ -1,26 +1,32 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Transacoes_saida extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
+import Sequelize, { Model } from 'sequelize'
+
+class Transacoes_saida extends Model {
+  static init(sequelize){
+    super.init({
+      qtd: Sequelize.DECIMAL,
+      valor: Sequelize.DECIMAL,
+      op: Sequelize.STRING,
+      obs: Sequelize.TEXT
+    }, {
+      sequelize,
+      modelName: 'Transacoes_saida',
+    })
   }
-  Transacoes_saida.init({
-    qtd: DataTypes.DECIMAL,
-    valor: DataTypes.DECIMAL,
-    op: DataTypes.STRING,
-    obs: DataTypes.TEXT
-  }, {
-    sequelize,
-    modelName: 'Transacoes_saida',
-  });
-  return Transacoes_saida;
-};
+  static associate(models) {
+    this.belongsTo(models.Users, {
+      foreignKey: 'user_id'
+    })
+    this.belongsTo(models.Requisitantes, {
+      foreignKey: 'requisitante_id'
+    })
+    this.belongsTo(models.Destinos, {
+      foreignKey: 'destino_id'
+    })
+    this.belongsTo(models.Materiais, {
+      foreignKey: 'material_id'
+    })
+  }
+}
+
+export default Transacoes_saida

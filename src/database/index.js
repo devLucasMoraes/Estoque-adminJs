@@ -2,7 +2,7 @@ import Sequelize from "sequelize";
 import config from '../config/database.js'
 
 // import Model from ''
-import Users from '../models/users.js'
+import Users from "../models/users.js"
 import Categorias from "../models/categorias.js"
 import Materiais from "../models/materiais.js"
 import Fornecedores from "../models/fornecedores.js"
@@ -10,9 +10,20 @@ import Transportadoras from "../models/transportadoras.js"
 import Transacoes_entrada from "../models/transacoes_entrada.js"
 import Destino from "../models/destinos.js";
 import Requisitantes from "../models/requisitantes.js"
+import Transacoes_saida from "../models/transacoes_saida.js"
 
 
-const models = [Users, Categorias, Materiais, Fornecedores, Transportadoras, Transacoes_entrada, Destino, Requisitantes]
+const models = [Users, 
+    Categorias, 
+    Materiais, 
+    Fornecedores, 
+    Transportadoras, 
+    Transacoes_entrada, 
+    Destino, 
+    Requisitantes,
+    Transacoes_saida
+
+]
 
 class Database {
     constructor() {

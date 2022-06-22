@@ -39,6 +39,9 @@ class Users extends Model {
     this.hasMany(models.Requisitantes, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transacoes_saida, {
+      foreignKey: 'user_id'
+    })
   }
 }
 
