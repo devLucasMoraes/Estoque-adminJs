@@ -14,6 +14,7 @@ import TransportadorasResources from './resources/TransportadorasResources'
 import Transacoes_entradaResources from './resources/Transacoes_entradaResources'
 import DestinosResources from './resources/DestinosResources'
 import RequisitantesResources from './resources/RequisitantesResources'
+import Transacoes_saidaResources from './resources/Transacoes_saidaResources'
 
 import locales from './locales/index.js'
 
@@ -31,7 +32,8 @@ const adminjs = new AdminJS({
         TransportadorasResources, 
         Transacoes_entradaResources,
         DestinosResources,
-        RequisitantesResources
+        RequisitantesResources,
+        Transacoes_saidaResources
     
     ],
     ...locales

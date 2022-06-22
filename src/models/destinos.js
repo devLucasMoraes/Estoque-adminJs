@@ -15,6 +15,9 @@ class Destinos extends Model {
     this.belongsTo(models.Users, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transacoes_saida, {
+      foreignKey: 'destino_id'
+    })
   }
 }
 

@@ -15,6 +15,9 @@ class Requisitantes extends Model {
     this.belongsTo(models.Users, {
       foreignKey: 'user_id'
     })
+    this.hasMany(models.Transacoes_saida, {
+      foreignKey: 'requisitante_id'
+    })
   }
 }
 
