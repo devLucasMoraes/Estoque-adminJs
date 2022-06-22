@@ -34,3 +34,5 @@ npx sequelize-cli model:generate --name Destinos --attributes name:string,fone:s
 
 
 npx sequelize-cli model:generate --name Requisitantes --attributes name:string,fone:string
+
+npx sequelize-cli model:generate --name Transacoes_saida --attributes qtd:decimal,valor:decimal,op:string,obs:text
