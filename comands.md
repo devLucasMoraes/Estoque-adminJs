@@ -38,3 +38,5 @@ npx sequelize-cli model:generate --name Requisitantes --attributes name:string,f
 npx sequelize-cli model:generate --name Transacoes_saida --attributes qtd:decimal,valor:decimal,op:string,obs:text
 
 npx sequelize-cli seed:generate --name demo-users
+
+npx sequelize-cli db:seed:all

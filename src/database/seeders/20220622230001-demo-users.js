@@ -7,7 +7,6 @@ module.exports = {
       {
         name: 'Administrador',
         email: 'administrador@administrador.com',
-        password: '123',
         password_hash: '123',
         role: 'administrador',
         status: 'ativo',
@@ -17,7 +16,6 @@ module.exports = {
       {
         name: 'Operador',
         email: 'operador@operador.com',
-        password: '123',
         password_hash: '123',
         role: 'operador',
         status: 'ativo',
