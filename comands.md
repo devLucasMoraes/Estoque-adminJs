@@ -40,3 +40,5 @@ npx sequelize-cli model:generate --name Transacoes_saida --attributes qtd:decima
 npx sequelize-cli seed:generate --name demo-users
 
 npx sequelize-cli db:seed:all
+
+npx sequelize-cli seed:generate --name demo-categorias
