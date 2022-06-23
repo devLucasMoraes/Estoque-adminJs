@@ -42,3 +42,5 @@ npx sequelize-cli seed:generate --name demo-users
 npx sequelize-cli db:seed:all
 
 npx sequelize-cli seed:generate --name demo-categorias
+
+npx sequelize-cli seed:generate --name demo-materiais
