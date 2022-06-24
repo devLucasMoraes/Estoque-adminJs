@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import './database'
 
+import User from '../src/models/users.js'
+
 import AdminJS from 'adminjs'
 import AdminJSExpress from '@adminjs/express'
 import AdminJSSequelize from '@adminjs/sequelize'
@@ -25,21 +27,31 @@ const app = express()
 const adminjs = new AdminJS({
     databases: [],
     rootPath: '/admin',
-    resources: [UsersResource, 
-        CategoriasResources, 
-        MateriaisResource, 
-        FornecedoresResources, 
-        TransportadorasResources, 
+    resources: [UsersResource,
+        CategoriasResources,
+        MateriaisResource,
+        FornecedoresResources,
+        TransportadorasResources,
         Transacoes_entradaResources,
         DestinosResources,
         RequisitantesResources,
         Transacoes_saidaResources
-    
+
     ],
     ...locales
 })
 
-const router = AdminJSExpress.buildRouter(adminjs)
+// const router = AdminJSExpress.buildRouter(adminjs)
+const router = AdminJSExpress.buildAuthenticatedRouter(adminjs, {
+    authenticate: async (email, password) => {
+        const user = await User.findOne({ where: { email } })
+        if (user && (await user.checkPassword(password))) {
+            return user
+        }
+        return false
+    },
+    cokiePassword: process.env.SECRET,
+})
 
 app.use(adminjs.options.rootPath, router)
 
