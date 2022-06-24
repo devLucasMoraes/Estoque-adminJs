@@ -6,7 +6,7 @@ class Categorias extends Model {
     super.init({
       name: Sequelize.STRING,
       und_medida: Sequelize.STRING,
-      estoque_min: Sequelize.DECIMAL,
+      estoque_min: Sequelize.DECIMAL(10,2),
       //user_id: Sequelize.INTEGER
     }, {
       sequelize,

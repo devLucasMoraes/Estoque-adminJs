@@ -44,3 +44,16 @@ npx sequelize-cli db:seed:all
 npx sequelize-cli seed:generate --name demo-categorias
 
 npx sequelize-cli seed:generate --name demo-materiais
+
+npx sequelize-cli seed:generate --name demo-transportadoras
+
+npx sequelize-cli seed:generate --name demo-fornecedores
+
+npx sequelize-cli seed:generate --name demo-Transacoes_entrada
+
+npx sequelize-cli seed:generate --name demo-requisitantes
+
+npx sequelize-cli seed:generate --name demo-destinos
+
+npx sequelize-cli seed:generate --name demo-transacoes_saida
+

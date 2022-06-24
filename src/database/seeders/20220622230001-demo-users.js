@@ -22,6 +22,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: 'lucas',
+        email: 'lucas@lucas.com',
+        password_hash: '123',
+        role: 'administrador',
+        status: 'ativo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'gaby',
+        email: 'gaby@gaby.com',
+        password_hash: '123',
+        role: 'operador',
+        status: 'ativo',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ], {});
 
   },

@@ -35,6 +35,8 @@ module.exports = {
       {name:"ALCOOL",und_medida:"LT",estoque_min:200,user_id:"2",createdAt:new Date(),updatedAt:new Date()},
       {name:"ARAMES",und_medida:"UND",estoque_min:1,user_id:"2",createdAt:new Date(),updatedAt:new Date()},
       {name:"COLAS",und_medida:"KG",estoque_min:10,user_id:"2",createdAt:new Date(),updatedAt:new Date()},
+      {name:"ESTOPA",und_medida:"UND",estoque_min:10,user_id:"2",createdAt:new Date(),updatedAt:new Date()},
+      {name:"TRAPO",und_medida:"UND",estoque_min:20,user_id:"2",createdAt:new Date(),updatedAt:new Date()},
 
     ], {});
   },
