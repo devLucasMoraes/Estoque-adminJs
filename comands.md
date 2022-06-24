@@ -36,3 +36,24 @@ npx sequelize-cli model:generate --name Destinos --attributes name:string,fone:s
 npx sequelize-cli model:generate --name Requisitantes --attributes name:string,fone:string
 
 npx sequelize-cli model:generate --name Transacoes_saida --attributes qtd:decimal,valor:decimal,op:string,obs:text
+
+npx sequelize-cli seed:generate --name demo-users
+
+npx sequelize-cli db:seed:all
+
+npx sequelize-cli seed:generate --name demo-categorias
+
+npx sequelize-cli seed:generate --name demo-materiais
+
+npx sequelize-cli seed:generate --name demo-transportadoras
+
+npx sequelize-cli seed:generate --name demo-fornecedores
+
+npx sequelize-cli seed:generate --name demo-Transacoes_entrada
+
+npx sequelize-cli seed:generate --name demo-requisitantes
+
+npx sequelize-cli seed:generate --name demo-destinos
+
+npx sequelize-cli seed:generate --name demo-transacoes_saida
+

@@ -18,7 +18,7 @@ module.exports = {
       },
       estoque_min: {
         allowNull: false,
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10, 2)
       },
       user_id: {
         allowNull: false,

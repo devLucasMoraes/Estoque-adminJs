@@ -4,13 +4,16 @@ import Sequelize, { Model } from 'sequelize'
 class Transacoes_saida extends Model {
   static init(sequelize){
     super.init({
-      qtd: Sequelize.DECIMAL,
-      valor: Sequelize.DECIMAL,
+      qtd: Sequelize.DECIMAL(10, 2),
+      valor: Sequelize.DECIMAL(10, 2),
       op: Sequelize.STRING,
       obs: Sequelize.TEXT
     }, {
       sequelize,
-      modelName: 'Transacoes_saida',
+      name: {
+        singular: 'Transacoes_saida',
+        plural: 'Transacoes_saidas'
+      },
     })
   }
   static associate(models) {

@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       qtd: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10, 2)
       },
       valor: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10, 2)
       },
       op: {
         type: Sequelize.STRING
