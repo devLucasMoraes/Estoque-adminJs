@@ -1,7 +1,7 @@
 'use strict';
 import Sequelize, { Model } from 'sequelize'
 
-
+import { creatPasswordHash, checkPassword} from '../services/auth.js'
 
 class Users extends Model {
   static init(sequelize) {
@@ -15,6 +15,11 @@ class Users extends Model {
     }, {
       sequelize,
       modelName: 'Users'
+    })
+    this.addHook('beforeSave', async (user) => {
+      if (user.password) {
+        user.password_hash = await creatPasswordHash(user.password)
+      }
     })
   }
   static associate(models) {
@@ -42,6 +47,10 @@ class Users extends Model {
     this.hasMany(models.Transacoes_saida, {
       foreignKey: 'user_id'
     })
+  }
+
+  checkPassword(password) {
+    return checkPassword(this, password)
   }
 }
 
