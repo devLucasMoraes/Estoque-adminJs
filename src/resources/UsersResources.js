@@ -1,5 +1,5 @@
 import Users from '../models/users.js'
-
+import { hasAdminPermission } from '../services/auth.js'
 export default {
     resource: Users,
     options: {
@@ -7,6 +7,11 @@ export default {
             icon: 'User'
         },
         actions: {
+            list: {
+                isAccessible: function({currentAdmin}) {
+                    return hasAdminPermission(currentAdmin)
+                }
+            },
             resetPassword: {
                 actionType: 'record',
                 icon: 'Password',
@@ -36,19 +41,19 @@ export default {
             role: {
                 position: 5,
                 isRequired: true,
-    /*             availableValues: [
-                    { value: 'admin', label: 'Administrador' },
-                    { value: 'manager', label: 'Gerente' },
-                    { value: 'developer', label: 'Desenvolvedor' },
-                ] */
+                /*             availableValues: [
+                                { value: 'admin', label: 'Administrador' },
+                                { value: 'manager', label: 'Gerente' },
+                                { value: 'developer', label: 'Desenvolvedor' },
+                            ] */
             },
             status: {
                 position: 6,
                 isRequired: true,
-    /*             availableValues: [
-                    { value: 'active', label: 'Ativo' },
-                    { value: 'archived', label: 'Arquivado' }
-                ] */
+                /*             availableValues: [
+                                { value: 'active', label: 'Ativo' },
+                                { value: 'archived', label: 'Arquivado' }
+                            ] */
             },
             createdAt: {
                 position: 7,
