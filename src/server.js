@@ -1,6 +1,8 @@
 import 'dotenv/config'
 import './database'
 
+import User from './models/users.js'
+
 import AdminJS from 'adminjs'
 import AdminJSExpress from '@adminjs/express'
 import AdminJSSequelize from '@adminjs/sequelize'
@@ -39,7 +41,18 @@ const adminjs = new AdminJS({
     ...locales
 })
 
-const router = AdminJSExpress.buildRouter(adminjs)
+//const router = AdminJSExpress.buildRouter(adminjs)
+const router = AdminJSExpress.buildAuthenticatedRouter(adminjs, {
+    authenticate: async (email, password) => {
+        const user = await User.findOne({ where: { email }})
+
+        if (user && (await user.checkPassword(password)) ){
+            return user
+        }
+        return false
+    },
+    cookiePassword: process.env.SECRET,
+})
 
 app.use(adminjs.options.rootPath, router)
 
