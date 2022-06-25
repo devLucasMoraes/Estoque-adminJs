@@ -5,6 +5,10 @@ import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
 export default {
   resource: Requisitantes,
   options: {
+    navigation: {
+      name: 'Controle de saidas',
+      icon: 'ArrowUpRight'
+    },
     parent: {
       icon: 'Need'
     },

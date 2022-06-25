@@ -5,6 +5,10 @@ import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
 export default {
     resource: Transacoes_saida,
     options: {
+        navigation: {
+            name: 'Controle de saidas',
+            icon: 'ArrowUpRight'
+          },
         parent: {
             icon: 'ArrowUpRight'
         },
@@ -31,20 +35,23 @@ export default {
             },
             material_id: {
                 position: 2,
+                isTitle: true,
                 isRequired: true
 
             },
             qtd: {
                 position: 3,
-                isRequired: true
+                isRequired: true,
 
             },
             valor: {
-                position: 4
+                position: 4,
+                isDisabled: true,
 
             },
             requisitante_id: {
-                position: 5
+                position: 5,
+                isRequired: true
 
             },
             op: {
@@ -52,7 +59,8 @@ export default {
 
             },
             destino_id: {
-                position: 7
+                position: 7,
+                isRequired: true
 
             },
             obs: {

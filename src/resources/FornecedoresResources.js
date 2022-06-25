@@ -5,6 +5,10 @@ import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
 export default {
   resource: Fornecedores,
   options: {
+    navigation: {
+      name: 'Controle de entradas',
+      icon: 'ArrowDownLeft'
+    },
     parent: {
       icon: 'Partnership'
     },

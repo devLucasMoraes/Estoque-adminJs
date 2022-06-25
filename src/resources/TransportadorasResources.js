@@ -5,6 +5,10 @@ import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
 export default {
   resource: Transportadoras,
   options: {
+    navigation: {
+      name: 'Controle de entradas',
+      icon: 'ArrowDownLeft'
+    },
     parent: {
       icon: 'DeliveryTruck'
     },

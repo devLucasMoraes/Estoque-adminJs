@@ -5,6 +5,10 @@ import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
 export default {
     resource: Transacoes_entrada,
     options: {
+        navigation: {
+            name: 'Controle de entradas',
+            icon: 'ArrowDownLeft'
+          },
         parent: {
             icon: 'ArrowDownLeft'
         },
@@ -31,8 +35,8 @@ export default {
             },
             material_id: {
                 position: 2,
-                isRequired: true
-
+                isRequired: true,
+                isTitle: true
             },
             qtd: {
                 position: 3,
@@ -44,15 +48,16 @@ export default {
 
             },
             fornecedora_id: {
-                position: 5
-
+                position: 5,
+                isRequired: true
             },
             nfe: {
                 position: 6
 
             },
             transportadora_id: {
-                position: 7
+                position: 7,
+                isRequired: true
 
             },
             valor_frete: {

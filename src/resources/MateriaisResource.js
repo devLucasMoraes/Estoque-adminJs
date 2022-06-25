@@ -34,7 +34,8 @@ export default {
         isRequired: true
       },
       categorias_id: {
-        position: 3
+        position: 3,
+        isRequired: true
       },
       user_id: {
         position: 4
