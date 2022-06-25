@@ -1,5 +1,7 @@
 import Users from '../models/users.js'
-import { hasAdminPermission } from '../services/auth.js'
+import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
+
+
 export default {
     resource: Users,
     options: {
@@ -7,8 +9,25 @@ export default {
             icon: 'User'
         },
         actions: {
+            new: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasOperatorPermission(currentAdmin)
+                }
+            },
+            edit: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasOperatorPermission(currentAdmin)
+                }
+            },
+            delete: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasAdminPermission(currentAdmin)
+                }
+            }
+        },
+        actions: {
             list: {
-                isAccessible: function({currentAdmin}) {
+                isAccessible: function ({ currentAdmin }) {
                     return hasAdminPermission(currentAdmin)
                 }
             },

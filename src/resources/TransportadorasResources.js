@@ -1,10 +1,29 @@
 import Transportadoras from "../models/transportadoras"
+import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
+
 
 export default {
   resource: Transportadoras,
   options: {
     parent: {
       icon: 'DeliveryTruck'
+    },
+    actions: {
+      new: {
+        isAccessible: function ({ currentAdmin }) {
+          return hasOperatorPermission(currentAdmin)
+        }
+      },
+      edit: {
+        isAccessible: function ({ currentAdmin }) {
+          return hasOperatorPermission(currentAdmin)
+        }
+      },
+      delete: {
+        isAccessible: function ({ currentAdmin }) {
+          return hasAdminPermission(currentAdmin)
+        }
+      }
     },
     properties: {
       id: {
