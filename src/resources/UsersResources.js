@@ -1,4 +1,6 @@
 import Users from '../models/users.js'
+import { hasOperatorPermission, hasAdminPermission } from '../services/auth.js'
+
 
 export default {
     resource: Users,
@@ -7,6 +9,28 @@ export default {
             icon: 'User'
         },
         actions: {
+            new: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasOperatorPermission(currentAdmin)
+                }
+            },
+            edit: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasOperatorPermission(currentAdmin)
+                }
+            },
+            delete: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasAdminPermission(currentAdmin)
+                }
+            }
+        },
+        actions: {
+            list: {
+                isAccessible: function ({ currentAdmin }) {
+                    return hasAdminPermission(currentAdmin)
+                }
+            },
             resetPassword: {
                 actionType: 'record',
                 icon: 'Password',
@@ -36,19 +60,19 @@ export default {
             role: {
                 position: 5,
                 isRequired: true,
-    /*             availableValues: [
-                    { value: 'admin', label: 'Administrador' },
-                    { value: 'manager', label: 'Gerente' },
-                    { value: 'developer', label: 'Desenvolvedor' },
-                ] */
+                /*             availableValues: [
+                                { value: 'admin', label: 'Administrador' },
+                                { value: 'manager', label: 'Gerente' },
+                                { value: 'developer', label: 'Desenvolvedor' },
+                            ] */
             },
             status: {
                 position: 6,
                 isRequired: true,
-    /*             availableValues: [
-                    { value: 'active', label: 'Ativo' },
-                    { value: 'archived', label: 'Arquivado' }
-                ] */
+                /*             availableValues: [
+                                { value: 'active', label: 'Ativo' },
+                                { value: 'archived', label: 'Arquivado' }
+                            ] */
             },
             createdAt: {
                 position: 7,
