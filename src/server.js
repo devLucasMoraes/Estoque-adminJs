@@ -18,6 +18,7 @@ import DestinosResources from './resources/DestinosResources'
 import RequisitantesResources from './resources/RequisitantesResources'
 import Transacoes_saidaResources from './resources/Transacoes_saidaResources'
 
+import BrandingOptions from './theme/index.js'
 import locales from './locales/index.js'
 
 AdminJS.registerAdapter(AdminJSSequelize)
@@ -38,7 +39,8 @@ const adminjs = new AdminJS({
         Transacoes_saidaResources
     
     ],
-    ...locales
+    branding: BrandingOptions,
+    ...locales,
 })
 
 //const router = AdminJSExpress.buildRouter(adminjs)

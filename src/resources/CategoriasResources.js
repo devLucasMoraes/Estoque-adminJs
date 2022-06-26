@@ -37,7 +37,8 @@ export default {
         isRequired: true
       },
       estoque_min: {
-        position: 4
+        position: 4,
+        isRequired: true
       },
       user_id: {
         position: 5
