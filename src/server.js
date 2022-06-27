@@ -27,7 +27,7 @@ const app = express()
 
 const adminjs = new AdminJS({
     databases: [],
-    rootPath: '/admin',
+    rootPath: '/',
     resources: [UsersResource, 
         CategoriasResources, 
         MateriaisResource, 
