@@ -11,7 +11,16 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      fone: {
+      razao_social: {
+        type: Sequelize.STRING
+      },
+      cnpj: {
+        type: Sequelize.STRING
+      },
+      fone1: {
+        type: Sequelize.STRING
+      },
+      fone2: {
         type: Sequelize.STRING
       },
       user_id: {
