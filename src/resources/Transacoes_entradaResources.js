@@ -8,7 +8,7 @@ export default {
         navigation: {
             name: 'Controle de entradas',
             icon: 'ArrowDownLeft'
-          },
+        },
         parent: {
             icon: 'ArrowDownLeft'
         },
@@ -28,6 +28,10 @@ export default {
                     return hasAdminPermission(currentAdmin)
                 }
             }
+        },
+        sort: {
+            direction: 'desc',
+            sortBy: 'id'
         },
         properties: {
             id: {
