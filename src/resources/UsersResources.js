@@ -41,6 +41,10 @@ export default {
                 },
             },
         },
+        sort: {
+            direction: 'desc',
+            sortBy: 'id'
+        },
         properties: {
             id: {
                 position: 1,
