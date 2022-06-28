@@ -7,7 +7,7 @@ module.exports = {
       {
         name: 'Administrador',
         email: 'administrador@administrador.com',
-        password_hash: '$12$ojeJcDgQo5vwdbI8UFl6HOE2O2HmD3tF.Fvu4XChHgkwjar8GpfpK',
+        password_hash: '$12$N/H7La0nwXYuA9fFRXQubuF8qvmRM2D8pONmG8ZinK/eKdzbagte.',
         role: 'administrador',
         status: 'ativo',
         createdAt: new Date(),
