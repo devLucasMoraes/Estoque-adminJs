@@ -37,17 +37,26 @@ export default {
         position: 2,
         isRequired: true
       },
-      fone: {
-        position: 3
+      razao_social: {
+        position: 3,
       },
-      user_id: {
-        position: 4
+      cnpj: {
+        position: 4,
       },
-      createdAt: {
+      fone1: {
         position: 5
       },
-      updatedAt: {
+      fone2: {
         position: 6
+      },
+      user_id: {
+        position: 7
+      },
+      createdAt: {
+        position: 8
+      },
+      updatedAt: {
+        position: 9
       }
     }
   }
