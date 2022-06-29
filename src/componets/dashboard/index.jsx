@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { ApiClient, useTranslation } from 'adminjs'
 import { Box, H2, Text } from '@adminjs/design-system'
 
+import TaskType from './cards/TaskType'
+import TaskEffort from './cards/TaskEffort'
+
 const api = new ApiClient()
 
 const Dashboard = () => {
@@ -35,10 +38,10 @@ const Dashboard = () => {
             flexWrap="wrap"
             width={[1, 1, 1, 1024]}>
             <Box width={[1, 1/2, 1/2]} p="lg">
-                <Text>Card 1</Text>
+                <TaskType></TaskType>
             </Box>
             <Box width={[1, 1/2, 1/2]} p="lg">
-                <Text>Card 2</Text>
+                <TaskEffort></TaskEffort>
             </Box>
         </Box>
     </Box>
