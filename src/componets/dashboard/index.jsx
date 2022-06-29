@@ -23,6 +23,24 @@ const Dashboard = () => {
                 </Text>
             </Box>
         </Box>
+
+        <Box
+            mt={["xl", "xl", "-80px"]}
+            mb="xl"
+            mx={[0, 0, 0, "auto"]}
+            px={["default", "lg", "xxl", "0"]}
+            position="relative"
+            flex
+            flexDirection="row"
+            flexWrap="wrap"
+            width={[1, 1, 1, 1024]}>
+            <Box width={[1, 1/2, 1/2]} p="lg">
+                <Text>Card 1</Text>
+            </Box>
+            <Box width={[1, 1/2, 1/2]} p="lg">
+                <Text>Card 2</Text>
+            </Box>
+        </Box>
     </Box>
     )
 }
