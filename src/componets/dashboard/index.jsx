@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-import { ApiClient } from 'adminjs'
+import { ApiClient, useTranslation } from 'adminjs'
 import { Box, H2, Text } from '@adminjs/design-system'
 
 const api = new ApiClient()
 
 const Dashboard = () => {
+    const { translateMessage } = useTranslation();
     const [data, setData] = useState({})
 
     useEffect(() => {
@@ -14,15 +15,15 @@ const Dashboard = () => {
         })
     }, [])
     return (<Box>
-                <Box position="relative" overflow="hidden">
-                    <Box bg="grey20" height={284} py={74} px={["dafault", "lg", 250]}>
-                        <Text textAlign="center" color="primary100">
-                            <H2>Titulo</H2>
-                            <Text opacity="0.8">Subtitulo</Text>
-                        </Text>
-                    </Box>
-                </Box>
+        <Box position="relative" overflow="hidden">
+            <Box bg="grey20" height={284} py={74} px={["dafault", "lg", 250]}>
+                <Text textAlign="center" color="primary100">
+                    <H2>{translateMessage("dashboardTitle")}</H2>
+                    <Text opacity="0.8">{translateMessage("dashboardSubTitle")}</Text>
+                </Text>
             </Box>
+        </Box>
+    </Box>
     )
 }
 
