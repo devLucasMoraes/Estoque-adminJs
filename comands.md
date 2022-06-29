@@ -57,3 +57,5 @@ npx sequelize-cli seed:generate --name demo-destinos
 
 npx sequelize-cli seed:generate --name demo-transacoes_saida
 
+npm i react-google-charts
+
