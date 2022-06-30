@@ -7,7 +7,8 @@ class Transacoes_saida extends Model {
       qtd: Sequelize.DECIMAL(10, 2),
       valor: Sequelize.DECIMAL(10, 2),
       op: Sequelize.STRING,
-      obs: Sequelize.TEXT
+      obs: Sequelize.TEXT,
+      data_de_retirada: Sequelize.DATE,
     }, {
       sequelize,
       name: {

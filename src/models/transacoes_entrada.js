@@ -8,7 +8,8 @@ class Transacoes_entrada extends Model {
       valor: Sequelize.DECIMAL(10, 2),
       valor_frete: Sequelize.DECIMAL(10, 2),
       nfe: Sequelize.STRING,
-      obs: Sequelize.TEXT
+      obs: Sequelize.TEXT,
+      data_de_recebimento: Sequelize.DATE,
     }, {
       sequelize,
       name: {
