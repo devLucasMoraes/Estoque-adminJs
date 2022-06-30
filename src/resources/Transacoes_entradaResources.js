@@ -37,53 +37,57 @@ export default {
             id: {
                 position: 1
             },
+            data_de_recebimento: {
+                position: 2
+    
+            },
             material_id: {
-                position: 2,
+                position: 3,
                 isRequired: true,
                 isTitle: true
             },
             qtd: {
-                position: 3,
+                position: 4,
                 isRequired: true
 
             },
             valor: {
-                position: 4
+                position: 5
 
             },
             fornecedora_id: {
-                position: 5,
+                position: 6,
                 isRequired: true
             },
             nfe: {
-                position: 6
+                position: 7
 
             },
             transportadora_id: {
-                position: 7,
+                position: 8,
                 isRequired: true
 
             },
             valor_frete: {
-                position: 8
-
-            },
-            obs: {
                 position: 9
 
             },
-            user_id: {
+            obs: {
                 position: 10
 
             },
-            createdAt: {
+            user_id: {
                 position: 11
 
             },
-            updatedAt: {
+            createdAt: {
                 position: 12
 
-            }
+            },
+            updatedAt: {
+                position: 13
+
+            },
         }
     }
 }
