@@ -25,7 +25,7 @@ module.exports = {
       {
         name: 'lucas',
         email: 'lucas@lucas.com',
-        password_hash: '$2b$12$mhX057TK9gQVqqnAKllSgu61rC95KLmIniN1.Z1F013wbpxb5boqO',
+        password_hash: '$2b$12$XCZPNQd9e5HA3GvEzyQn6.KeQfqYm2KuNv3ooF6EMaffwMboW.zGy',
         role: 'administrador',
         status: 'ativo',
         createdAt: new Date(),
