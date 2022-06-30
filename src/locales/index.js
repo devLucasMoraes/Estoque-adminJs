@@ -82,8 +82,8 @@ const translations = {
     newPasswordMessage: 'Nova senha "{{newPassword}}" atribuída ao usuário.',
     newPasswordMessageError: "Erro ao redefinir a senha automaticamente.",
     // traducao do titulo e subtitulo do dashboard
-    dashboardTitle: "Bem-vindo(a) ao Task Manager",
-    dashboardSubTitle: "Controle todos seus projetos de uma forma simples",
+    dashboardTitle: "Dashboard em breve",
+    dashboardSubTitle: "Controle seu estoque de uma forma simples",
     taskTypeCardTitle: "Tipos de Tarefas",
     taskEffortCardTitle: "Esforço por prazo",
   },
