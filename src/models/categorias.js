@@ -6,7 +6,15 @@ class Categorias extends Model {
     super.init({
       name: Sequelize.STRING,
       und_medida: Sequelize.STRING,
-      estoque_min: Sequelize.DECIMAL(10,2),
+      estoque_min: {
+        type: Sequelize.DECIMAL(10,2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }
+      },
       //user_id: Sequelize.INTEGER
     }, {
       sequelize,

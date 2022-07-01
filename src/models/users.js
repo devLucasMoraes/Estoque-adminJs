@@ -7,7 +7,20 @@ class Users extends Model {
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
-      email: Sequelize.STRING,
+      email: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        validate: {
+          isEmail: {
+            args: true,
+            msg: 'E-mail invalido.'
+          },
+          notNull: {
+            args: true,
+            msg: 'Digite um email valido'
+          }
+        }
+      },
       password: Sequelize.VIRTUAL,
       password_hash: Sequelize.STRING,
       role: Sequelize.ENUM('administrador', 'operador'),
@@ -17,6 +30,7 @@ class Users extends Model {
       modelName: 'Users'
     })
     this.addHook('beforeSave', async (user) => {
+      console.log(user)
       if (user.password) {
         user.password_hash = await creatPasswordHash(user.password)
       }

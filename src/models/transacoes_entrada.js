@@ -4,12 +4,36 @@ import Sequelize, { Model } from 'sequelize'
 class Transacoes_entrada extends Model {
   static init(sequelize){
     super.init({
-      qtd: Sequelize.DECIMAL(10, 2),
-      valor: Sequelize.DECIMAL(10, 2),
-      valor_frete: Sequelize.DECIMAL(10, 2),
+      data_de_recebimento: Sequelize.DATE,
+      qtd: {
+        type: Sequelize.DECIMAL(10, 2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }  
+      },
+      valor: {
+        type: Sequelize.DECIMAL(10, 2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }
+      },
+      valor_frete: {
+        type: Sequelize.DECIMAL(10, 2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }
+      },
       nfe: Sequelize.STRING,
       obs: Sequelize.TEXT,
-      data_de_recebimento: Sequelize.DATE,
     }, {
       sequelize,
       name: {
