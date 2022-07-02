@@ -17,7 +17,7 @@ export default {
       grey100: '#0C0D0F',
       grey80: '#1D1E21',
       grey60: '#64666B',
-      grey40: '#CED4DA',
+      grey40: '#bfc7cf',
       grey20: '#E9ECEF',
       white: '#fff',
   
@@ -34,7 +34,7 @@ export default {
   
       // Backgrounds
       filterBg: '#0C0D0F',
-      hoverBg: '#CED4DA',
+      hoverBg: '#bfc7cf',
   
       // global
       border: '#1D1E21',
@@ -42,7 +42,7 @@ export default {
       // Elements
       inputBorder: '#64666B',
       separator: '#64666B',
-      highlight: '#CED4DA',
+      highlight: '#bfc7cf',
       filterInputBorder: 'rgba(255,255,255,0.15)',
       filterDisabled: 'rgba(83,91,142,0.05)',
       bg: '#fafafa',
