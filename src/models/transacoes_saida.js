@@ -32,6 +32,17 @@ class Transacoes_saida extends Model {
         plural: 'Transacoes_saidas'
       },
     })
+
+    this.addHook('beforeValidate', async (transacoes_saida) => {
+      const qtd = transacoes_saida.qtd
+      const valor = transacoes_saida.qtd
+      if (transacoes_saida.qtd) {
+        transacoes_saida.qtd = qtd.replace(",", ".")
+      }
+      if (transacoes_saida.valor) {
+        transacoes_saida.valor = valor.replace(",", ".")
+      }
+    })
   }
   static associate(models) {
     this.belongsTo(models.Users, {

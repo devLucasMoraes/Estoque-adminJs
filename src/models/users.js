@@ -30,7 +30,7 @@ class Users extends Model {
       modelName: 'Users'
     })
     this.addHook('beforeSave', async (user) => {
-      console.log(user)
+      //console.log(user)
       if (user.password) {
         user.password_hash = await creatPasswordHash(user.password)
       }

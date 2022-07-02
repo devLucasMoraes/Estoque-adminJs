@@ -20,6 +20,13 @@ class Categorias extends Model {
       sequelize,
       modelName: 'Categorias'
     })
+
+    this.addHook('beforeValidate', async (categoria) => {
+      const estoque_min = categoria.estoque_min
+      if (categoria.estoque_min) {
+        categoria.estoque_min = estoque_min.replace(",", ".")
+      }
+    })
   }
   static associate(models) {
     this.belongsTo(models.Users, {

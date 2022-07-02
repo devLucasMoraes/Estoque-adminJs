@@ -41,6 +41,21 @@ class Transacoes_entrada extends Model {
         plural: 'Transacoes_entradas'
       },
     })
+
+    this.addHook('beforeValidate', async (transacoes_entrada) => {
+      const qtd = transacoes_entrada.qtd
+      const valor = transacoes_entrada.qtd
+      const valor_frete = transacoes_entrada.qtd
+      if (transacoes_entrada.qtd) {
+        transacoes_entrada.qtd = qtd.replace(",", ".")
+      }
+      if (transacoes_entrada.valor) {
+        transacoes_entrada.valor = valor.replace(",", ".")
+      }
+      if (transacoes_entrada.valor_frete) {
+        transacoes_entrada.valor_frete = valor_frete.replace(",", ".")
+      }
+    })
   }
   static associate(models) {
     this.belongsTo(models.Users, {
