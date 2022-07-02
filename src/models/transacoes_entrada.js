@@ -44,8 +44,8 @@ class Transacoes_entrada extends Model {
 
     this.addHook('beforeValidate', async (transacoes_entrada) => {
       const qtd = transacoes_entrada.qtd
-      const valor = transacoes_entrada.qtd
-      const valor_frete = transacoes_entrada.qtd
+      const valor = transacoes_entrada.valor
+      const valor_frete = transacoes_entrada.valor_frete
       if (transacoes_entrada.qtd) {
         transacoes_entrada.qtd = qtd.replace(",", ".")
       }
