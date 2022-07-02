@@ -36,11 +36,11 @@ export default {
         position: 2,
         isRequired: true
       },
-      und_medida: {
+      estoque_min: {
         position: 3,
         isRequired: true
       },
-      estoque_min: {
+      und_medida: {
         position: 4,
         isRequired: true
       },
