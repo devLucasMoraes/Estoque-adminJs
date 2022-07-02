@@ -4,17 +4,44 @@ import Sequelize, { Model } from 'sequelize'
 class Transacoes_saida extends Model {
   static init(sequelize){
     super.init({
-      qtd: Sequelize.DECIMAL(10, 2),
-      valor: Sequelize.DECIMAL(10, 2),
+      data_de_retirada: Sequelize.DATE,
+      qtd: {
+        type: Sequelize.DECIMAL(10, 2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }
+      },
+      valor: {
+        type: Sequelize.DECIMAL(10, 2),
+        validate: {
+          isNumeric: {
+            args: true,
+            msg: 'Campo só aceita números'
+          }
+        }
+      },
       op: Sequelize.STRING,
       obs: Sequelize.TEXT,
-      data_de_retirada: Sequelize.DATE,
     }, {
       sequelize,
       name: {
         singular: 'Transacoes_saida',
         plural: 'Transacoes_saidas'
       },
+    })
+
+    this.addHook('beforeValidate', async (transacoes_saida) => {
+      const qtd = transacoes_saida.qtd
+      const valor = transacoes_saida.qtd
+      if (transacoes_saida.qtd) {
+        transacoes_saida.qtd = qtd.replace(",", ".")
+      }
+      if (transacoes_saida.valor) {
+        transacoes_saida.valor = valor.replace(",", ".")
+      }
     })
   }
   static associate(models) {
