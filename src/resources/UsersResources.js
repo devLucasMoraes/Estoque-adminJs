@@ -59,7 +59,8 @@ export default {
             },
             password: {
                 position: 4,
-                isVisible: { list: false, filter: false, show: false, edit: true }
+                isVisible: { list: false, filter: false, show: false, edit: true },
+                type: 'password'
             },
             role: {
                 position: 5,
