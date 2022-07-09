@@ -11,6 +11,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      valor_unt: {
+        type: Sequelize.DECIMAL(10,2)
+      },
       categorias_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
