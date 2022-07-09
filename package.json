@@ -19,6 +19,8 @@
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.3",
     "mysql2": "^2.3.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "react-google-charts": "^4.0.0",
     "sequelize": "^6.21.0"
   },
