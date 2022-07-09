@@ -25,6 +25,9 @@ class Materiais extends Model {
     this.hasMany(models.Transacoes_saida, {
       foreignKey: 'material_id'
     })
+    this.hasMany(models.Estoque, {
+      foreignKey: 'material_id'
+    })
   }
 }
 
