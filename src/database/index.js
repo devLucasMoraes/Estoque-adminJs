@@ -11,6 +11,7 @@ import Transacoes_entrada from "../models/transacoes_entrada.js"
 import Destino from "../models/destinos.js";
 import Requisitantes from "../models/requisitantes.js"
 import Transacoes_saida from "../models/transacoes_saida.js"
+import Estoque from "../models/estoque"
 
 
 const models = [Users, 
@@ -21,7 +22,8 @@ const models = [Users,
     Transacoes_entrada, 
     Destino, 
     Requisitantes,
-    Transacoes_saida
+    Transacoes_saida,
+    Estoque
 
 ]
 

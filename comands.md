@@ -59,3 +59,5 @@ npx sequelize-cli seed:generate --name demo-transacoes_saida
 
 npm i react-google-charts
 
+npx sequelize-cli model:generate --name Estoque --attributes qtd_em_estoque:decimal,valor_total:decimal
+
