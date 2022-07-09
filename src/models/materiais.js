@@ -5,7 +5,8 @@ import Sequelize, { Model } from 'sequelize'
 class Materiais extends Model {
   static init(sequelize) {
     super.init({
-      name: Sequelize.STRING
+      name: Sequelize.STRING,
+      valor_unt: Sequelize.DECIMAL(10,2)
     }, {
       sequelize,
       modelName: 'Materiais',
