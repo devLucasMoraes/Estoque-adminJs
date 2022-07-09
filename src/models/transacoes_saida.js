@@ -43,6 +43,12 @@ class Transacoes_saida extends Model {
         transacoes_saida.valor = valor.replace(",", ".")
       }
     })
+    this.addHook('beforeValidate', async (transacoes_saida) => {
+       if(typeof transacoes_saida.data_de_retirada === 'undefined') {
+        transacoes_saida.data_de_retirada = new Date()
+       }
+ 
+    })
   }
   static associate(models) {
     this.belongsTo(models.Users, {
