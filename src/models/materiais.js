@@ -2,33 +2,36 @@
 import Sequelize, { Model } from 'sequelize'
 
 
-class Materiais extends Model {
+class materiais extends Model {
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
       valor_unt: Sequelize.DECIMAL(10,2)
     }, {
       sequelize,
-      modelName: 'Materiais',
+      name: {
+        singular: 'material',
+        plural: 'materiais' 
+      }
     })
   }
   static associate(models) {
-    this.belongsTo(models.Categorias, {
+    this.belongsTo(models.categorias, {
       foreignKey: 'categorias_id'
     })
-    this.belongsTo(models.Users, {
+    this.belongsTo(models.users, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transacoes_entrada, {
+    this.hasMany(models.transacoes_entrada, {
       foreignKey: 'material_id'
     })
-    this.hasMany(models.Transacoes_saida, {
+    this.hasMany(models.transacoes_saida, {
       foreignKey: 'material_id'
     })
-    this.hasMany(models.Estoque, {
+    this.hasMany(models.estoque, {
       foreignKey: 'material_id'
     })
   }
 }
 
-export default Materiais
+export default materiais

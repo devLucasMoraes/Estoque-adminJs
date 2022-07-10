@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Fornecedores', [
+    await queryInterface.bulkInsert('fornecedores', [
       { name: "TOYOINK", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date() },
       { name: "SUZANO", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
       { name: "USUARIO E SEU PODER", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
@@ -12,6 +12,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Fornecedores', null, {});
+    await queryInterface.bulkDelete('fornecedores', null, {});
   }
 };

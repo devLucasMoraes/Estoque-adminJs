@@ -2,7 +2,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Transportadoras', [
+    await queryInterface.bulkInsert('transportadoras', [
       { name: "SORA TRANSPORTES", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date() },
       { name: "D PAULA TRANSPORTES", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
       { name: "USUARIO E SEU PODER", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
@@ -13,6 +13,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Transportadoras', null, {});
+    await queryInterface.bulkDelete('transportadoras', null, {});
   }
 };

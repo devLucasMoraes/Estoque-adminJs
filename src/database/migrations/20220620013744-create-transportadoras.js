@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Transportadoras', {
+    await queryInterface.createTable('transportadoras', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -27,7 +27,7 @@ module.exports = {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'users', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -41,6 +41,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Transportadoras');
+    await queryInterface.dropTable('transportadoras');
   }
 };

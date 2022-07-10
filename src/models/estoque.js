@@ -2,7 +2,7 @@
 import Sequelize, { Model } from 'sequelize'
 
 
-class Estoque extends Model {
+class estoque extends Model {
   static init(sequelize) {
     super.init({
       qtd_em_estoque: Sequelize.DECIMAL,
@@ -10,16 +10,16 @@ class Estoque extends Model {
     }, {
       sequelize,
       name: {
-        singular: 'Estoque',
-        plural: 'Estoques'
+        singular: 'estoque',
+        plural: 'estoques'
       },
     })
   }
   static associate(models) {
-    this.belongsTo(models.Materiais, {
+    this.belongsTo(models.materiais, {
       foreignKey: 'material_id'
     })
   }
 }
 
-export default Estoque
+export default estoque

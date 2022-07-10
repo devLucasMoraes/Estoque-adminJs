@@ -37,10 +37,6 @@ export default {
         position: 2,
         isRequired: true
       },
-      name: {
-        position: 3,
-        isDisabled: true,
-      },
       categorias_id: {
         position: 3,
         isRequired: true

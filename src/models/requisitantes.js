@@ -1,24 +1,27 @@
 'use strict';
 
 import Sequelize, { Model } from 'sequelize'
-class Requisitantes extends Model {
+class requisitantes extends Model {
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
       fone: Sequelize.STRING
     }, {
       sequelize,
-      modelName: 'Requisitantes'
+      name: {
+        singular: 'requisitante',
+        plural: 'requisitantes'
+      }
     })
   }
   static associate(models) {
-    this.belongsTo(models.Users, {
+    this.belongsTo(models.users, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transacoes_saida, {
+    this.hasMany(models.transacoes_saida, {
       foreignKey: 'requisitante_id'
     })
   }
 }
 
-export default Requisitantes;
+export default requisitantes;

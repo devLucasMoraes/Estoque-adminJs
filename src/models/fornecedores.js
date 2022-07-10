@@ -1,7 +1,7 @@
 'use strict';
 
 import Sequelize, { Model } from 'sequelize'
-class Fornecedores extends Model {
+class fornecedores extends Model {
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
@@ -11,17 +11,20 @@ class Fornecedores extends Model {
       fone2: Sequelize.STRING,
     }, {
       sequelize,
-      modelName: 'Fornecedores'
+      name: {
+        singular: 'fornecedor',
+        plural: 'fornecedores'
+      }
     })
   }
   static associate(models) {
-    this.belongsTo(models.Users, {
+    this.belongsTo(models.users, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transacoes_entrada, {
+    this.hasMany(models.transacoes_entrada, {
       foreignKey: 'fornecedora_id'
     })
   }
 }
 
-export default Fornecedores;
+export default fornecedores;

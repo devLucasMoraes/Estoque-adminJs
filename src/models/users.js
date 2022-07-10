@@ -3,7 +3,7 @@ import Sequelize, { Model } from 'sequelize'
 
 import { creatPasswordHash, checkPassword} from '../services/auth.js'
 
-class Users extends Model {
+class users extends Model {
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
@@ -27,7 +27,10 @@ class Users extends Model {
       status: Sequelize.ENUM('ativo', 'desativado')
     }, {
       sequelize,
-      modelName: 'Users'
+      name: {
+        singular: 'user',
+        plural: 'users'
+      }
     })
     this.addHook('beforeSave', async (user) => {
       //console.log(user)
@@ -37,28 +40,28 @@ class Users extends Model {
     })
   }
   static associate(models) {
-    this.hasMany(models.Categorias, {
+    this.hasMany(models.categorias, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Materiais, {
+    this.hasMany(models.materiais, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Fornecedores, {
+    this.hasMany(models.fornecedores, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transportadoras, {
+    this.hasMany(models.transportadoras, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transacoes_entrada, {
+    this.hasMany(models.transacoes_entrada, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Destinos, {
+    this.hasMany(models.destinos, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Requisitantes, {
+    this.hasMany(models.requisitantes, {
       foreignKey: 'user_id'
     })
-    this.hasMany(models.Transacoes_saida, {
+    this.hasMany(models.transacoes_saida, {
       foreignKey: 'user_id'
     })
   }
@@ -68,5 +71,5 @@ class Users extends Model {
   }
 }
 
-export default Users
+export default users
 

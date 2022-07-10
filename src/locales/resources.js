@@ -6,7 +6,7 @@ const commonProps = {
   };
 
 export default {
-    Users: {
+    users: {
         actions: {
           resetPassword: "Redefinir senha",
         },
@@ -20,7 +20,7 @@ export default {
           ...commonProps,
         },
       },
-      Categorias: {
+      categorias: {
         properties: {
           id: "ID",
           name: "Tipo de materia-prima",
@@ -29,7 +29,7 @@ export default {
           ...commonProps,
         },
       },
-      Destinos: {
+      destinos: {
         properties: {
           id: "ID",
           name: "Destinos",
@@ -37,7 +37,7 @@ export default {
           ...commonProps,
         },
       },
-      Requisitantes: {
+      requisitantes: {
         properties: {
           id: "ID",
           name: "Requisitante",
@@ -45,7 +45,7 @@ export default {
           ...commonProps,
         },
       },
-      Fornecedores: {
+      fornecedores: {
         properties: {
           id: "ID",
           name: "Fornecedores",
@@ -53,7 +53,7 @@ export default {
           ...commonProps,
         },
       },
-      Transportadoras: {
+      transportadoras: {
         properties: {
           id: "ID",
           name: "Transportadoras",
@@ -61,7 +61,7 @@ export default {
           ...commonProps,
         },
       },
-      Materiais: {
+      materiais: {
         properties: {
           id: "ID",
           name: "Descrição",
@@ -69,7 +69,7 @@ export default {
           ...commonProps,
         },
       },
-      Transacoes_entradas: {
+      transacoes_entradas: {
         properties: {
           id: "ID",
           material_id: "Material",
@@ -83,7 +83,7 @@ export default {
           ...commonProps,
         },
       },
-      Transacoes_saidas: {
+      transacoes_saidas: {
         properties: {
           id: "ID",
           material_id: "Material",
