@@ -28,8 +28,8 @@ class Transacoes_saida extends Model {
     }, {
       sequelize,
       name: {
-        singular: 'Transacoes_saida',
-        plural: 'Transacoes_saidas'
+        singular: 'transacoes_saida',
+        plural: 'transacoes_saidas'
       },
     })
 

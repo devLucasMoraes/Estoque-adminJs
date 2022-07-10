@@ -38,10 +38,10 @@ const materiaisJSON = [
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Materiais', array, {});
+    await queryInterface.bulkInsert('materiais', array, {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Materiais', null, {});
+    await queryInterface.bulkDelete('materiais', null, {});
   }
 };

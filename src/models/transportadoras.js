@@ -11,7 +11,10 @@ class Transportadoras extends Model {
       fone2: Sequelize.STRING,
     }, {
       sequelize,
-      modelName: 'Transportadoras'
+      name: {
+        singular: 'transportador',
+        plural: 'transportadoras'
+      }
     })
   }
   static associate(models) {

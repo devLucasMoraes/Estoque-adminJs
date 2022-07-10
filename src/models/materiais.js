@@ -9,7 +9,10 @@ class Materiais extends Model {
       valor_unt: Sequelize.DECIMAL(10,2)
     }, {
       sequelize,
-      modelName: 'Materiais',
+      name: {
+        singular: 'material',
+        plural: 'materiais' 
+      }
     })
   }
   static associate(models) {

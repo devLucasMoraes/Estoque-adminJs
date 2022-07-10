@@ -18,7 +18,10 @@ class Categorias extends Model {
       //user_id: Sequelize.INTEGER
     }, {
       sequelize,
-      modelName: 'Categorias'
+      name: {
+        singular: 'categoria',
+        plural: 'categorias'
+      }
     })
 
     this.addHook('beforeValidate', async (categoria) => {

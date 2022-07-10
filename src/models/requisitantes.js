@@ -8,7 +8,10 @@ class Requisitantes extends Model {
       fone: Sequelize.STRING
     }, {
       sequelize,
-      modelName: 'Requisitantes'
+      name: {
+        singular: 'requisitante',
+        plural: 'requisitantes'
+      }
     })
   }
   static associate(models) {

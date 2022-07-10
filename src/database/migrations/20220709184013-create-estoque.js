@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Estoques', {
+    await queryInterface.createTable('estoques', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,7 @@ module.exports = {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Materiais', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'materiais', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       qtd_em_estoque: {
@@ -32,6 +32,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Estoques');
+    await queryInterface.dropTable('estoques');
   }
 };

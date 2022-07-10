@@ -10,8 +10,8 @@ class Estoque extends Model {
     }, {
       sequelize,
       name: {
-        singular: 'Estoque',
-        plural: 'Estoques'
+        singular: 'estoque',
+        plural: 'estoques'
       },
     })
   }

@@ -37,8 +37,8 @@ class Transacoes_entrada extends Model {
     }, {
       sequelize,
       name: {
-        singular: 'Transacoes_entrada',
-        plural: 'Transacoes_entradas'
+        singular: 'transacoes_entrada',
+        plural: 'transacoes_entradas'
       },
     })
 

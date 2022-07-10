@@ -11,7 +11,10 @@ class Fornecedores extends Model {
       fone2: Sequelize.STRING,
     }, {
       sequelize,
-      modelName: 'Fornecedores'
+      name: {
+        singular: 'fornecedor',
+        plural: 'fornecedores'
+      }
     })
   }
   static associate(models) {

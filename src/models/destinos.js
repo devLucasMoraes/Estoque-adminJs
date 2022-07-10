@@ -8,7 +8,10 @@ class Destinos extends Model {
       fone: Sequelize.STRING
     }, {
       sequelize,
-      modelName: 'Destinos'
+      name: {
+        singular: 'destino',
+        plural: 'destinos'
+      }
     })
   }
   static associate(models) {

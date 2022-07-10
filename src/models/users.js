@@ -27,7 +27,10 @@ class Users extends Model {
       status: Sequelize.ENUM('ativo', 'desativado')
     }, {
       sequelize,
-      modelName: 'Users'
+      name: {
+        singular: 'user',
+        plural: 'users'
+      }
     })
     this.addHook('beforeSave', async (user) => {
       //console.log(user)

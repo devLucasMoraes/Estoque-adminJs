@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('Categorias', [
+    await queryInterface.bulkInsert('categorias', [
 
       {
         name:"LIMPADOR DE CHAPA",
@@ -42,6 +42,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('Categorias', null, {});
+    await queryInterface.bulkDelete('categorias', null, {});
   }
 };

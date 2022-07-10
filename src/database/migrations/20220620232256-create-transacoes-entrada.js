@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Transacoes_entradas', {
+    await queryInterface.createTable('transacoes_entradas', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -28,28 +28,28 @@ module.exports = {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Users', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'users', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       transportadora_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Transportadoras', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'transportadoras', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       fornecedora_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Fornecedores', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'fornecedores', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       material_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',
-        references: {model: 'Materiais', key: 'id'}, // referenciando chave estranjeira
+        references: {model: 'materiais', key: 'id'}, // referenciando chave estranjeira
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -63,6 +63,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Transacoes_entradas');
+    await queryInterface.dropTable('transacoes_entradas');
   }
 };
