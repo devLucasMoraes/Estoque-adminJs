@@ -48,8 +48,8 @@ const adminjs = new AdminJS({
     ...locales,
 })
 
-const router = AdminJSExpress.buildRouter(adminjs)
-/* const router = AdminJSExpress.buildAuthenticatedRouter(adminjs, {
+// const router = AdminJSExpress.buildRouter(adminjs)
+const router = AdminJSExpress.buildAuthenticatedRouter(adminjs, {
     authenticate: async (email, password) => {
         const user = await User.findOne({ where: { email }})
 
@@ -60,7 +60,7 @@ const router = AdminJSExpress.buildRouter(adminjs)
     },
     cookiePassword: process.env.SECRET,
 })
- */
+
 app.use(adminjs.options.rootPath, router)
 
 const port = 8080

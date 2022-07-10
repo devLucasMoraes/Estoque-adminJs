@@ -1,7 +1,7 @@
 'use strict';
 import Sequelize, { Model } from 'sequelize'
 
-class Transacoes_entrada extends Model {
+class transacoes_entrada extends Model {
   static init(sequelize){
     super.init({
       data_de_recebimento: Sequelize.DATE,
@@ -58,19 +58,19 @@ class Transacoes_entrada extends Model {
     })
   }
   static associate(models) {
-    this.belongsTo(models.Users, {
+    this.belongsTo(models.users, {
       foreignKey: 'user_id'
     })
-    this.belongsTo(models.Transportadoras, {
+    this.belongsTo(models.transportadoras, {
       foreignKey: 'transportadora_id'
     })
-    this.belongsTo(models.Fornecedores, {
+    this.belongsTo(models.fornecedores, {
       foreignKey: 'fornecedora_id'
     })
-    this.belongsTo(models.Materiais, {
+    this.belongsTo(models.materiais, {
       foreignKey: 'material_id'
     })
   }
 }
 
-export default Transacoes_entrada
+export default transacoes_entrada
