@@ -42,11 +42,14 @@ export default {
       valor_total: {
         position: 4
       },
-      createdAt: {
+      abaixo_min: {
         position: 5
       },
-      updatedAt: {
+      createdAt: {
         position: 6
+      },
+      updatedAt: {
+        position: 7
       },
     }
   }

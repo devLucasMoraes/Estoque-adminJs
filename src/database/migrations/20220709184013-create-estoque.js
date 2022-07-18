@@ -16,10 +16,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       qtd_em_estoque: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       valor_total: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
+      },
+      abaixo_min: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

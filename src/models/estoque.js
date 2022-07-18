@@ -6,7 +6,8 @@ class estoque extends Model {
   static init(sequelize) {
     super.init({
       qtd_em_estoque: Sequelize.DECIMAL,
-      valor_total: Sequelize.DECIMAL
+      valor_total: Sequelize.DECIMAL,
+      abaixo_min: Sequelize.BOOLEAN
     }, {
       sequelize,
       name: {
