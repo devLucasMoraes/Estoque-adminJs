@@ -1,10 +1,10 @@
 'use strict';
-import categoriasArray from './_/categorias.js'
+import array from './_/categorias.js'
 
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('categorias', categoriasArray , {});
+    await queryInterface.bulkInsert('categorias', array , {});
   },
 
   async down (queryInterface, Sequelize) {

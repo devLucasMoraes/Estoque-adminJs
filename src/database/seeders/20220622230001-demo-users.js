@@ -1,10 +1,10 @@
 'use strict';
-import usersArray from './_/users.js'
+import array from './_/users.js'
 
 module.exports = {
   async up (queryInterface, Sequelize) {
 
-    await queryInterface.bulkInsert('users',usersArray, {});
+    await queryInterface.bulkInsert('users',array, {});
 
   },
 
