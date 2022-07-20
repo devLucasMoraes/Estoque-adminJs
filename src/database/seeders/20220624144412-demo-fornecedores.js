@@ -1,14 +1,9 @@
 'use strict';
+import array from "./_/fornecedores.js"
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.bulkInsert('fornecedores', [
-      { name: "TOYOINK", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date() },
-      { name: "SUZANO", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
-      { name: "USUARIO E SEU PODER", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
-      { name: "VIA BRASIL EDITORA GRAFICA LTDA", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  },
-      { name: "ESTOPA ROCHA", fone1: "99999999999", user_id: 1, createdAt: new Date(), updatedAt: new Date()  }
-    ], {});
+    await queryInterface.bulkInsert('fornecedores', array , {});
   },
 
   async down (queryInterface, Sequelize) {
