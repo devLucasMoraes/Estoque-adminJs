@@ -33,23 +33,26 @@ export default {
       id: {
         position: 1
       },
-      material_id: {
+      categoria_id: {
         position: 2
       },
-      qtd_em_estoque: {
+      material_id: {
         position: 3
       },
-      valor_total: {
+      qtd_em_estoque: {
         position: 4
       },
-      abaixo_min: {
+      valor_total: {
         position: 5
       },
-      createdAt: {
+      abaixo_min: {
         position: 6
       },
-      updatedAt: {
+      createdAt: {
         position: 7
+      },
+      updatedAt: {
+        position: 8
       },
     }
   }

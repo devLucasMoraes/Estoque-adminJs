@@ -17,7 +17,7 @@ class materiais extends Model {
   }
   static associate(models) {
     this.belongsTo(models.categorias, {
-      foreignKey: 'categorias_id'
+      foreignKey: 'categoria_id'
     })
     this.belongsTo(models.users, {
       foreignKey: 'user_id'
