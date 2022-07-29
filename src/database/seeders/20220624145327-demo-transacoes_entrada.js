@@ -19,7 +19,7 @@ const transacoes_entradasJSON = [
   { "qtd": 200, "valor": 5858, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 21, "createdAt": "2022-07-28 17:55:33.032-03", "updatedAt": "2022-07-28 17:55:33.032-03" },
   { "qtd": 120, "valor": 3514.8, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 22, "createdAt": "2022-07-28 17:57:29.582-03", "updatedAt": "2022-07-28 17:57:29.582-03" },
   { "qtd": 10, "valor": 292.9, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 22, "createdAt": "2022-07-28 18:02:42.615-03", "updatedAt": "2022-07-28 18:02:42.615-03" },
-  { "qtd": 100, "valor": 28.27, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 24, "createdAt": "2022-07-28 18:05:04.727-03", "updatedAt": "2022-07-28 18:05:04.727-03" }
+  { "qtd": 100, "valor": 2827.00 , "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 24, "createdAt": "2022-07-28 18:05:04.727-03", "updatedAt": "2022-07-28 18:05:04.727-03" }
 ]
 
 const array = JSON.parse(JSON.stringify(transacoes_entradasJSON))
