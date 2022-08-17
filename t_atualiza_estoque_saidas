@@ -2,29 +2,42 @@ CREATE OR REPLACE FUNCTION atualiza_estoque_saidas() RETURNS TRIGGER AS $$
     DECLARE 
         contador integer;
 		vlr_unt decimal;
+        vlr_unt_old decimal;
         new_categorias_id integer;
         sum_qtd_em_estoque decimal;
         qtd_min decimal;
     BEGIN
 		select materiais.valor_unt from materiais where id = new.material_id into vlr_unt;
-		new.valor = vlr_unt * new.qtd;
+        select materiais.valor_unt from materiais where id = new.material_id into vlr_unt_old;
         select categoria_id from materiais where id = new.material_id into new_categorias_id;
         select estoque_min from categorias where id = new_categorias_id into qtd_min;
         
         
         IF (TG_OP = 'DELETE') THEN
                 UPDATE estoques SET 
-                                    material_id = OLD.material_id, 
                                     qtd_em_estoque = qtd_em_estoque + OLD.qtd, 
-                                    valor_total = (new.valor / new.qtd) * (qtd_em_estoque + OLD.qtd)
+                                    valor_total = vlr_unt_old * (qtd_em_estoque + OLD.qtd)
                 WHERE material_id = OLD.material_id;
         ELSIF (TG_OP = 'UPDATE') THEN
+            SELECT count(*) into contador FROM estoques WHERE material_id = new.material_id;
+        
+            IF contador > 0 THEN
                 UPDATE estoques SET 
-                                    material_id = new.material_id, 
-                                    qtd_em_estoque = qtd_em_estoque - (new.qtd - old.qtd), 
-                                    valor_total = (new.valor / new.qtd) * (qtd_em_estoque - (new.qtd - old.qtd)),
-                                    categoria_id = new_categorias_id
+                                    qtd_em_estoque = qtd_em_estoque - new.qtd, 
+                                    valor_total = vlr_unt * (qtd_em_estoque - new.qtd)
                 WHERE material_id = new.material_id;
+                UPDATE estoques SET 
+                                    qtd_em_estoque = qtd_em_estoque + old.qtd, 
+                                    valor_total = vlr_unt_old * (qtd_em_estoque + old.qtd)
+                WHERE material_id = old.material_id;
+            ELSE
+                INSERT INTO estoques (material_id, qtd_em_estoque, valor_total, "createdAt", "updatedAt", categoria_id)  
+                VALUES (new.material_id, new.qtd * -1, new.valor * -1 ,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, new_categorias_id);
+                UPDATE estoques SET 
+                                    qtd_em_estoque = qtd_em_estoque + old.qtd, 
+                                    valor_total = vlr_unt_old * (qtd_em_estoque + old.qtd)
+                WHERE material_id = old.material_id;
+            END IF;
         ELSIF (TG_OP = 'INSERT') THEN
             SELECT count(*) into contador FROM estoques WHERE material_id = new.material_id;
         
@@ -39,18 +52,18 @@ CREATE OR REPLACE FUNCTION atualiza_estoque_saidas() RETURNS TRIGGER AS $$
                 INSERT INTO estoques (material_id, qtd_em_estoque, valor_total, "createdAt", "updatedAt", categoria_id)  
                 VALUES (new.material_id, new.qtd * -1, new.valor * -1 ,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, new_categorias_id);
             END IF;
+         END IF;
+         
+         SELECT SUM(qtd_em_estoque) FROM estoques WHERE estoques.categoria_id = new_categorias_id into sum_qtd_em_estoque;
             
-            SELECT SUM(qtd_em_estoque) FROM estoques WHERE estoques.categoria_id = new_categorias_id into sum_qtd_em_estoque;
-            
-            IF (sum_qtd_em_estoque <= qtd_min) THEN
-                UPDATE estoques SET abaixo_min = TRUE WHERE material_id = new.material_id;
-                --UPDATE estoques SET valor_total = new_categorias_id WHERE material_id = new.material_id;
-            ELSE 
-                UPDATE estoques SET abaixo_min = FALSE WHERE material_id = new.material_id;
-                --UPDATE estoques SET valor_total = new_categorias_id WHERE material_id = new.material_id;
-            END IF;
-        END IF;
-        RETURN NEW;
+         IF (sum_qtd_em_estoque <= qtd_min) THEN
+            UPDATE estoques SET abaixo_min = TRUE WHERE material_id = new.material_id;
+         ELSE 
+            UPDATE estoques SET abaixo_min = FALSE WHERE material_id = new.material_id;
+         END IF;
+         
+
+         RETURN NEW;
     END;
 $$ LANGUAGE plpgsql;
 
