@@ -14,7 +14,7 @@ module.exports = {
       valor_unt: {
         type: Sequelize.DECIMAL(10,2)
       },
-      categorias_id: {
+      categoria_id: {
         allowNull: false,
         onUpdate: 'CASCADE',
         onDelete: 'RESTRICT',

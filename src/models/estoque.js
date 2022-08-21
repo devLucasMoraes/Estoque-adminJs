@@ -20,6 +20,9 @@ class estoque extends Model {
     this.belongsTo(models.materiais, {
       foreignKey: 'material_id'
     })
+    this.belongsTo(models.categorias, {
+      foreignKey: 'categoria_id'
+    })
   }
 }
 

@@ -36,7 +36,10 @@ class categorias extends Model {
       foreignKey: 'user_id'
     })
     this.hasMany(models.materiais, {
-      foreignKey: 'categorias_id',
+      foreignKey: 'categoria_id',
+    })
+    this.hasMany(models.estoque, {
+      foreignKey: 'categoria_id',
     })
   }
 }

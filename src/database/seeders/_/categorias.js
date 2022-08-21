@@ -20,8 +20,7 @@ const categoriasJSON = [
 {"name":"VERNIZ","und_medida":"KG","estoque_min":"20.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 15:25:20"},
 {"name":"BOBINAS","und_medida":"UND","estoque_min":"0.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 15:25:20"},
 {"name":"REVELADOR","und_medida":"LT","estoque_min":"60.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 15:25:20"},
-{"name":"�LCOOIS","und_medida":"LT","estoque_min":"200.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-07-02 17:06:36"}
-,
+{"name":"ALCOOIS","und_medida":"LT","estoque_min":"200.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-07-02 17:06:36"},
 {"name":"ARAMES","und_medida":"ROLOS","estoque_min":"1.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 21:03:53"},
 {"name":"COLA VERMELHA","und_medida":"KG","estoque_min":"10.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 20:50:14"},
 {"name":"ESTOPA","und_medida":"UND","estoque_min":"10.00","user_id":"2","createdAt":"2022-06-30 15:25:20","updatedAt":"2022-06-30 15:25:20"},
