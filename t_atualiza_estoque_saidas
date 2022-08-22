@@ -1,3 +1,4 @@
+-- Active: 1661114521908@@127.0.0.1@5432@estoque_dev@public
 CREATE OR REPLACE FUNCTION atualiza_estoque_saidas() RETURNS TRIGGER AS $$
     DECLARE
         contador integer;
@@ -49,7 +50,7 @@ CREATE OR REPLACE FUNCTION atualiza_estoque_saidas() RETURNS TRIGGER AS $$
                 UPDATE estoques SET
                                     material_id = new.material_id,
                                     qtd_em_estoque = qtd_em_estoque - new.qtd,
-                                    valor_total = (new.valor / new.qtd) * (qtd_em_estoque - new.qtd),
+                                    valor_total = vlr_unt * (qtd_em_estoque - new.qtd),
                                     categoria_id = new_categorias_id
                 WHERE material_id = new.material_id;
             ELSE
