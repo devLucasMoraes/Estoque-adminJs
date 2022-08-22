@@ -15,11 +15,11 @@ const transacoes_entradasJSON = [
   { "qtd": "6.00", "valor": "29.11", "valor_frete": "0.00", "nfe": "NULL", "obs": "NULL", "user_id": "3", "transportadora_id": "3", "fornecedora_id": "4", "material_id": "38", "createdAt": "2022-07-08 20:29:30", "updatedAt": "2022-07-08 20:29:30", "data_de_recebimento": "2022-07-08 11:00:00" },
   { "qtd": "600.00", "valor": "4631.97", "valor_frete": "0.00", "nfe": "3522 0313 7612 9000 0138 5500 1000 1189 0913 0377 5442", "obs": "", "user_id": "3", "transportadora_id": "3", "fornecedora_id": "2", "material_id": "1", "createdAt": "2022-07-08 20:29:30", "updatedAt": "2022-07-08 20:29:30" },
   { "qtd": "50.00", "valor": "965.00", "valor_frete": "550.00", "nfe": "3521 0613 7612 9000 0138 5500 1000 1129 6019 1145 5910", "obs": "", "user_id": "3", "transportadora_id": "3", "fornecedora_id": "2", "material_id": "19", "createdAt": "2022-07-08 20:29:30", "updatedAt": "2022-07-08 20:29:30" },
-  { "qtd": 70, "valor": 2050.3, "nfe": "NULL", "obs": "", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 25, "createdAt": "2022-07-28 17:53:36.611-03", "updatedAt": "2022-07-28 17:53:36.611-03" },
-  { "qtd": 200, "valor": 5858, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 21, "createdAt": "2022-07-28 17:55:33.032-03", "updatedAt": "2022-07-28 17:55:33.032-03" },
-  { "qtd": 120, "valor": 3514.8, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 22, "createdAt": "2022-07-28 17:57:29.582-03", "updatedAt": "2022-07-28 17:57:29.582-03" },
-  { "qtd": 10, "valor": 292.9, "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 22, "createdAt": "2022-07-28 18:02:42.615-03", "updatedAt": "2022-07-28 18:02:42.615-03" },
-  { "qtd": 100, "valor": 2827.00 , "nfe": "NULL", "obs": "NULL", "user_id": 3, "transportadora_id": 1, "fornecedora_id": 5, "material_id": 24, "createdAt": "2022-07-28 18:05:04.727-03", "updatedAt": "2022-07-28 18:05:04.727-03" }
+  { "qtd": "70", "valor": "2050.3", "nfe": "NULL", "obs": "", "user_id": "3", "transportadora_id": "1", "fornecedora_id": "5", "material_id": "25", "createdAt": "2022-07-28 17:53:36.611-03", "updatedAt": "2022-07-28 17:53:36.611-03" },
+  { "qtd": "200", "valor": "5858", "nfe": "NULL", "obs": "NULL", "user_id": "3", "transportadora_id": "1", "fornecedora_id": "5", "material_id": "21", "createdAt": "2022-07-28 17:55:33.032-03", "updatedAt": "2022-07-28 17:55:33.032-03" },
+  { "qtd": "120", "valor": "3514.8", "nfe": "NULL", "obs": "NULL", "user_id": "3", "transportadora_id": "1", "fornecedora_id": "5", "material_id": "22", "createdAt": "2022-07-28 17:57:29.582-03", "updatedAt": "2022-07-28 17:57:29.582-03" },
+  { "qtd": "10", "valor": "292.9", "nfe": "NULL", "obs": "NULL", "user_id": "3", "transportadora_id": "1", "fornecedora_id": "5", "material_id": "22", "createdAt": "2022-07-28 18:02:42.615-03", "updatedAt": "2022-07-28 18:02:42.615-03" },
+  { "qtd": "100", "valor": "2827.00" , "nfe": "NULL", "obs": "NULL", "user_id": "3", "transportadora_id": "1", "fornecedora_id": "5", "material_id": "24", "createdAt": "2022-07-28 18:05:04.727-03", "updatedAt": "2022-07-28 18:05:04.727-03" }
 ]
 
 const array = JSON.parse(JSON.stringify(transacoes_entradasJSON))
